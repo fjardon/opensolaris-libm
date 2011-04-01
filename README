@@ -1,0 +1,35 @@
+#
+# Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
+# Use is subject to license terms.
+#
+# ident	"@(#)README	1.1	06/01/30 SMI"
+#
+
+To build libm and libmvec:
+
+	cd usr/src/harness; make -f Makefile-os \
+		STUDIOBIN=/your/path/to/Sun/Studio11/bin \
+		BUILDNAME=any_build_name_without_blanks \
+		STATDIR=/your/path/to/scratch/directory \
+		DESTDIR=/your/path/to/root/of/install/location
+
+The resulting files, symlinks and libraries will be installed under
+$(DESTDIR).  The default values for these macros are:
+
+	STUDIOBIN=/opt/SUNWspro/bin
+	BUILDNAME="DEV"
+	STATDIR=statdir/`uname -p`/$(BUILDNAME)
+	DESTDIR=destdir/`uname -p`/$(BUILDNAME)
+
+If you're happy with the default values, there is no need to specify any.
+
+Also, the following derived macros can be set individually if so desired.
+The default values are listed below for reference:
+
+	CC=$(STUDIOBIN)/cc
+	LINT=$(STUDIOBIN)/lint
+	MAKE=$(STUDIOBIN)/dmake -m serial
+	DMAKE=$(STUDIOBIN)/dmake -m parallel -j $(DMAKE_MAX_JOBS)
+	DMAKE_MAX_JOBS # the default is 8 jobs per processor in on-line state
+
+Note that only Sun Studio 10 or Sun Studio 11 compilers are supported.

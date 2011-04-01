@@ -1,0 +1,11 @@
+#
+# Copyright 2006 Sun Microsystems, Inc.  All rights reserved.
+# Use is subject to license terms.
+#
+# ident	"@(#)ReleaseNotes	1.2	06/01/31 SMI"
+#
+
+The 2006.01.31 release of the source code for libm and libmvec
+was used to build the files and libraries delivered into snv_33.
+
+See README for build instructions.
